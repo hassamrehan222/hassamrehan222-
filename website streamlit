@@ -1,0 +1,76 @@
+import streamlit as st
+from PIL import Image
+st.set_page_config(page_title="HASSAM WEBPAGE", page_icon=":tada:", layout="wide")
+
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
+
+img_contact = Image.open("417810487_337480949099627_3551119438973317882_n.jpg")
+
+st.subheader("Hi, I am: Hassam")
+st.title("CRICKET MEMES from Pakistan")
+st.write("I AM CRICKET JOURNALIST")
+st.write("[learn more >](https://www.codewithharry.com/)")
+
+with st.container():
+    st.write("---")
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.header("what I do")
+        st.write("##")
+        st.write(
+            """
+            hey I am cricket memes
+            - fan of Babar Azam
+            - supporter of Pakistan cricket team
+
+            Follow my page for more cricket updates
+            """
+        )
+        st.write("[Facebook page >](https://www.facebook.com/CricketMemesss)")
+
+    with st.sidebar:
+        st.title("cricket memes")
+        st.image('images.jpg')
+
+with st.container():
+     st.write("---")
+     st.header("my videos")
+     st.write('##')
+     image_column, text_column = st.columns((1,2))
+     with image_column:
+         st.image(img_contact)
+     with text_column:
+         st.subheader("king babar")
+         st.write(
+             """"
+             classy cover drives of king babar azam
+             king for a reason
+
+             """
+         )
+         st.markdown("[watch video...](https://www.facebook.com/100085131734103/videos/683671927219591)")
+
+with st.container():
+    st.write("---")
+    st.header("Get In Touch With Me")
+    st.write("##")
+
+    contact_orm = """
+    <form action="https://formsubmit.co/hassamrehan222@gmail.com" method="POST">
+         <input type="hidden" name="_captcha" value="false">
+         <input type="text" name="name" placeholder="Your name" required>
+         <input type="email" name="email" placeholder="your email" required>
+         <textarea name="message" placeholder="your message here" required></textarea>
+         <button type="submit">Send</button>
+    </form>
+    """
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.markdown(contact_orm, unsafe_allow_html=True)
+    with right_column:
+        st.empty()
