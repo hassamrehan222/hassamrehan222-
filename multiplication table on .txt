@@ -1,0 +1,8 @@
+num = int(input("Enter the number: "))
+table = [num * i for i in range(1, 11)]
+
+with open("hiscore.txt", 'w') as f:
+    for i in range(1, 11):
+        f.write(f"{num} x {i} = {table[i-1]}\n")
+
+print(f"Multiplication table for {num} has been written to hiscore.txt")
