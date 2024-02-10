@@ -1,0 +1,61 @@
+class library:
+    def __init__(self, listobooks):
+        self.books = listobooks
+
+    def displayavailablebooks(self):
+        print("the books present in this library are")
+        for book in self.books:
+            print("\t" + book)
+
+    def borrowbook(self, bookname):
+        if bookname in self.books:
+            print(f"you have been issued {bookname}, please keep it safe and return it within 30 days")
+            self.books.remove(bookname)
+            return True
+        else:
+            print("sorry, this book is already been issued")
+            return False
+
+    def returnbook(self, bookname):
+        self.books.append(bookname)
+        print("thanks for returning this book")
+
+
+class student:
+    @staticmethod
+    def requestbook():
+        return input("enter the name of the book you want to borrow: ")
+
+    @staticmethod
+    def returnbook():
+        return input("enter the name of the book you want to return: ")
+
+
+if __name__ == '__main__':
+    centrallibrary = library(["algorithm", "python", "django"])
+    centrallibrary.displayavailablebooks()
+
+    while True:
+        welcomemsg = '''  ====welcome to my central library ====
+        please choose an option:
+        1) list all the books
+        2) request a book
+        3) return a book
+        4) exit the library
+        '''
+        print(welcomemsg)
+        choice = int(input("enter your choice: "))
+
+        if choice == 1:
+            centrallibrary.displayavailablebooks()
+        elif choice == 2:
+            book_requested = student.requestbook()
+            centrallibrary.borrowbook(book_requested)
+        elif choice == 3:
+            book_returned = student.returnbook()
+            centrallibrary.returnbook(book_returned)
+        elif choice == 4:
+            print("thanks for choosing central library")
+            break
+        else:
+            print("invalid choice")
