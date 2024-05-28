@@ -1,0 +1,125 @@
+ask import Flask, render_template, request, flash
+# from werkzeug.utils import secure_filename
+# import cv2
+# import os
+# UPLOAD_FOLDER = 'uploads'
+# ALLOWED_EXTENSIONS = {'png', 'webp', 'jpg', 'jpeg', 'gif'}
+#
+#
+# app = Flask(__name__)
+# app.secret_key = 'super secret key'
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#
+# def allowed_file(filename):
+#     return '.' in filename and \
+#            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+#
+#
+# def processimage(filename, operation):
+#     print(f"the operation is {operation}  and filename is {filename}")
+#     img  = cv2.imread(f"uploads/{filename}")
+#     match operation:
+#         case  "cgray":
+#             imgprocessed = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#             cv2.imwrite(f"static/{filename}",imgprocessed)
+#     pass
+#
+#
+# @app.route('/')
+# def home():
+#
+#     return render_template("index.html")
+#
+# @app.route('/About')
+# def about():
+#
+#     return render_template("about.html")
+#
+# @app.route('/edit', methods=["GET", "POST"])
+# def edit():
+#    if request.method == "POST":
+#        operation = request.form.get("operation")
+#
+#        if 'file' not in request.files:
+#            flash('No file part')
+#            return "error"
+#        file = request.files['file']
+#        # If the user does not select a file, the browser submits an
+#        # empty file without a filename.
+#        if file.filename == '':
+#            flash('No selected file')
+#            return "error no selected file"
+#        if file and allowed_file(file.filename):
+#            filename = secure_filename(file.filename)
+#            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#
+#            processimage(filename, operation)
+#            flash(f"your image has been processed and available <a href='/static/{filename}'>here</a>")
+#            return render_template("index.html")
+#
+#        return render_template("index.html")
+#
+#
+# app.run(debug = True)
+
+
+# import pandas as pd
+# from pandas_profiling import ProfileReport
+# df = pd.read_csv("selected-services-december-2023-quarter-csv.csv")
+# print(df)
+
+# class emp:
+#     def __init__(self, name, salary, age):
+#         self.name = name
+#         self.age = age
+#         self.salary = salary
+#
+#     def show_emp(self):
+#         print("The name of the employee is", self.name)
+#         print("The age of the employee is", self.age)
+#         print("The salary of the employee is", self.salary)
+#
+# a = emp("hassam", 500000, 23)
+# a.show_emp()
+#
+#
+# class grandparent:
+#     def get_name(self, name):
+#         self.name = name
+#
+#     def set_name(self, name):
+#         return name
+#
+# class parent(grandparent):
+#     def get_age(self, age):
+#         self.age  = age
+#
+#     def set_age(self,age):
+#         return age
+#
+# class child(parent):
+#     def get_gender(self, gender):
+#         self.gender=  gender
+#
+#     def set_gender(self, gender):
+#         return gender
+#
+# a =child()
+# a.get_name("hassam")
+# a.get_age(65)
+# a.get_gender("male")
+# print(a.set_name("ali"))
+# print(a.set_age(22))
+# print(a.set_gender("male"))
+#
+# import pandas as pd
+# s1 = pd.Series([1,2,3,4,5], index = ['a','b','c','d','e'])
+# print(s1)
+#
+
+
+# s=pd.Series ({'a': 1, 'b':20})
+# print(s)
+
+# s1 = pd.DataFrame({'name':['hassam', "minhaj", "mulla"], 'marks':[67,43,56] })
+# print(s1)
